@@ -47,7 +47,7 @@ always @(posedge clk or posedge reset) begin
         full_reg <= 0;
     else if (write_en && (wr_ptr == rd_ptr))
         full_reg <= 1;
-    else if (read_en && empty_reg)
+    else if (read_en && !empty_reg)
         full_reg <= 0;
 end
 // Data storage
